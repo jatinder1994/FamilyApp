@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct FamilyView: View {
+    @State private var viewModel: FamilyViewModel
+    
+    init(family: Family) {
+        _viewModel = State(initialValue: FamilyViewModel(family: family))
+    }
     var body: some View {
-        Text("Family")
+        NavigationStack{
+            Group{
+                if viewModel.hasNoMember{
+                    ContentUnavailableView("No family members yet", systemImage: "person.3", description: Text("Add people in your household to get started")
+                    )
+                }else{
+                    List{
+                        Section("Members"){
+                            ForEach(viewModel.members){
+                                member in MemberRow(member: member)
+                            }
+                        }
+                    }
+                }
+            }.navigationTitle(viewModel.title)
+        }
     }
 }
 
 #Preview {
-    FamilyView()
+    FamilyView(family: FamilyData.doe)
 }
