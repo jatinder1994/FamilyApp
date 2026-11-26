@@ -14,7 +14,7 @@ struct FamilyHubApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            MainTabView(family: FamilyData.doe)
         }
         
     }

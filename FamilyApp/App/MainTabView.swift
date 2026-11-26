@@ -1,5 +1,5 @@
 //
-//  TabView.swift
+//  FamilyTabView.swift
 //  FamilyApp
 //
 //  Created by Jatinder Nijjar on 11/25/26.
@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
+    let family: Family
+    
     var body: some View {
         TabView {
             Tab("Home", systemImage: "house"){
@@ -23,12 +25,12 @@ struct MainTabView: View {
                 ChoresView()
             }
             Tab("Family", systemImage: "person.3"){
-                FamilyView()
+                FamilyView(family: family)
             }
         }
     }
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(family: FamilyData.doe)
 }

@@ -11,26 +11,7 @@
     ],
   },
   "files": [
-    {
-      "kind": "folder",
-      "path": "FamilyApp",
-      "target-membership": [
-        "FamilyApp",
-      ],
-      "membership-exceptions": [
-        {
-          "target": "FamilyApp",
-          "exclusions": [
-            "Models/Family/.swift",
-          ],
-        }, {
-          "build-phase": "FamilyApp/compile-sources",
-          "inclusions": [
-            "Models/Family/.swift",
-          ],
-        },
-      ],
-    },
+    { "kind": "folder", "path": "FamilyApp", "target-membership": [ "FamilyApp" ] },
     { "kind": "folder", "path": "FamilyAppTests", "target-membership": [ "FamilyAppTests" ] },
     { "kind": "folder", "path": "FamilyAppUITests", "target-membership": [ "FamilyAppUITests" ] },
     {
