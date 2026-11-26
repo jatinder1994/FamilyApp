@@ -1,0 +1,9 @@
+# Xcode personal settings
+xcuserdata/
+
+# Build files
+DerivedData/
+build/
+
+# macOS
+.DS_Store
